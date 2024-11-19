@@ -1,9 +1,21 @@
 import java.util.Arrays;
 
+
 public class HeapSort {
     public static void heapSort(Integer[] values) {
-        // Intentionally not implemented -- see homework assignmnet
-        throw new UnsupportedOperationException("Not yet implemented.");
+    	//using the constructor to make empty heap
+    	
+    	
+    	COMP232ArrayHeap<Integer, Integer> newHeap = new COMP232ArrayHeap<>();
+    	//filling empty heap.
+    	for(Integer i:values) {
+    		newHeap.add(i,i);
+    	}
+    	//Remove the values in descending order, just keep removing the root
+    	for(int j=0; j< values.length;j++) {
+    		values[j]= newHeap.remove();
+    	}
+    	
     }
 
     public static void main(String[] args) {
